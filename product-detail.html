@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <!-- Box Icons -->
+    <link href='lib/boxicons v2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Swiper -->
+    <link rel="stylesheet" href="lib/swiperjs v11.1.5/swiper-bundle.min.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="lib/Animate On Scroll v2.3.2/dist/aos.css">
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="lib/Fancybox v5.0.36/dist/fancybox/fancybox.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Alert Overlay -->
+    <div class="alert-overlay-products" id="alertOverlay">
+        <div class="alert-container" id="alertContainer">
+            <div class="alert-icon checkmark" id="alertIcon">
+                <i class='bx bx-check'></i>
+            </div>
+            <h3 class="alert-title"></h3>
+            <p class="alert-message"></p>
+            <div class="alert-actions">
+                <button class="alert-btn btn-secondary" onclick="closeAlert()">
+                    Keep Shopping
+                </button>
+                <button class="alert-btn btn-primary" onclick="goToCart()">
+                    <i class='bx bx-cart'></i>
+                    Go to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button class="to-top"><i class="bx bx-up-arrow-alt"></i></button>
+
+    <nav data-aos="fade-down">
+        <a class="nav-logo" href="index.html"><img src="assets/logo.png" alt="Logo" width="30px"></a>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
+
+        <ol class="glassmorphism" id="nav-links">
+            <li><a href="products.html">Products</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about-us.html">About us</a></li>
+            <li class="nav-item-mobile"><a href="">Profile</a></li>
+            <li class="nav-item-mobile"><a href="dashboard.html">Dashboard</a></li>
+            <li class="nav-item-mobile"><a href="cart.html">Cart</a></li>
+            <li class="nav-item-mobile"><a href="before.html">Sign Out</a></li>
+        </ol>
+
+        <div class="auth-container">
+            <div class="auth" id="auth-toggle">
+                <img src="assets/clients/client2.jpg" alt="profile" width="30px" height="30px"></img>
+                <p>Angga</p>
+            </div>
+
+            <div class="dropdown-menu" id="dropdown-menu">
+                <a href="" class="dropdown-item">
+                    <i class='bx bx-user'></i>
+                    <span>Profile</span>
+                </a>
+                <a href="dashboard.html" class="dropdown-item">
+                    <i class='bx bx-receipt'></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="cart.html" class="dropdown-item">
+                    <i class='bx bx-cart-alt'></i>
+                    <span>Cart</span>
+                </a>
+                <a href="before.html" class="dropdown-item">
+                    <i class='bx bx-log-out'></i>
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="product-detail">
+        <div data-aos="fade-right" class="screenshots">
+            <a data-fancybox="screenshots-fancybox" href="assets/detail-product/dashboard-main.jpg">
+                <img src="assets/detail-product/dashboard-main.jpg" alt="Dashboard" width="100%">
+            </a>
+            <div class="flex-screenshots">
+                <a data-fancybox="screenshots-fancybox" href="assets/detail-product/dashboard1.jpg">
+                    <img src="assets/detail-product/dashboard1.jpg" alt="Dashboard" width="100%">
+                </a>
+                <a data-fancybox="screenshots-fancybox" href="assets/detail-product/dashboard2.jpg">
+                    <img src="assets/detail-product/dashboard2.jpg" alt="Dashboard" width="100%">
+                </a>
+                <a data-fancybox="screenshots-fancybox" href="assets/detail-product/dashboard3.jpg">
+                    <img src="assets/detail-product/dashboard3.jpg" alt="Dashboard" width="100%">
+                </a>
+                <a data-fancybox="screenshots-fancybox" href="assets/detail-product/dashboard4.jpg">
+                    <img src="assets/detail-product/dashboard4.jpg" alt="Dashboard" width="100%">
+                </a>
+            </div>
+            <div id="support" class="support-tab">
+                <h3>Support & Resources</h3>
+                <p class="desc">Get help and resources for Antivirus Safezone</p>
+                <div class="content">
+                    <div class="support-content">
+                        <p>Documentation</p>
+                        <p><a href="#">Installation Guide</a></p>
+                        <p><a href="#">User Manual</a></p>
+                        <p><a href="#">Troubleshooting</a></p>
+                        <p><a href="#">FAQ</a></p>
+                    </div>
+                    <div class="support-content">
+                        <p>Contact Support</p>
+                        <p>📧 Email: support@safezone.com</p>
+                        <p>📞 Phone: +123-456-789</p>
+                        <p>💬 Live Chat: Available 24/7</p>
+                        <p>🎫 Support Tickets: Online portal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-aos="fade-left" class="content">
+            <h1>Antivirus Safezone</h1>
+            <p class="desc">Advanced antivirus protection with real-time threat detection, firewall, and anti-ransomware
+                capabilities.</p>
+            <div class="stars">
+                <div>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star-half"></i>
+                </div>
+                <p>4.5</p>
+                <p class="peoples"><i class="bx bx-group"></i> 2,847 reviews</p>
+            </div>
+            <h2>Choose Your Plan</h2>
+            <!-- Hidden input untuk integrasi form / checkout -->
+            <input id="selectedPlan" name="selectedPlan" type="hidden" value="Pro" />
+
+            <div class="plans-detail" role="listbox" aria-label="Plan options">
+                <!-- Basic -->
+                <div class="plan" role="option" tabindex="0" aria-selected="false" data-name="Basic" data-price="9.99"
+                    data-period="month">
+                    <div class="header row">
+                        <div class="left">
+                            <div class="bullet" aria-hidden="true"></div>
+                            <div class="name">Basic</div>
+                        </div>
+                        <div class="price">
+                            <div class="amount">$9.99</div>
+                            <div class="period">per month</div>
+                        </div>
+                    </div>
+                    <div class="features">
+                        <div class="feat"><span class="check">✔</span><span>Real-time virus protection</span></div>
+                        <div class="feat"><span class="check">✔</span><span>Web browsing protection</span></div>
+                        <div class="feat"><span class="check">✔</span><span>Email scanning</span></div>
+                        <div class="feat"><span class="check">✔</span><span>Basic firewall</span></div>
+                    </div>
+                    <div class="more">+2 more features</div>
+                </div>
+
+                <!-- Pro (default selected) -->
+                <div class="plan" role="option" tabindex="0" aria-selected="true" data-selected="true" data-name="Pro"
+                    data-price="19.99" data-period="month">
+                    <div class="header row">
+                        <div class="left">
+                            <div class="bullet" aria-hidden="true"></div>
+                            <div class="name">Pro</div>
+                            <span class="badge">Most Popular</span>
+                        </div>
+                        <div class="price">
+                            <div class="amount">$19.99</div>
+                            <div class="period">per month</div>
+                        </div>
+                    </div>
+                    <div class="features">
+                        <div class="feat"><span class="check">✔</span><span>Everything in Basic</span></div>
+                        <div class="feat"><span class="check">✔</span><span>Advanced firewall</span></div>
+                        <div class="feat"><span class="check">✔</span><span>Anti-ransomware</span></div>
+                        <div class="feat"><span class="check">✔</span><span>Identity protection</span></div>
+                    </div>
+                    <div class="more">+3 more features</div>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="plan" role="option" tabindex="0" aria-selected="false" data-name="Enterprise"
+                    data-price="39.99" data-period="month">
+                    <div class="header row">
+                        <div class="left">
+                            <div class="bullet" aria-hidden="true"></div>
+                            <div class="name">Enterprise</div>
+                        </div>
+                        <div class="price">
+                            <div class="amount">$39.99</div>
+                            <div class="period">per month</div>
+                        </div>
+                    </div>
+                    <div class="features">
+                        <div class="feat"><span class="check">✔</span><span>Everything in Pro</span></div>
+                        <div class="feat"><span class="check">✔</span><span>24/7 monitoring</span></div>
+                        <div class="feat"><span class="check">✔</span><span>Admin panel</span></div>
+                        <div class="feat"><span class="check">✔</span><span>Unlimited devices</span></div>
+                    </div>
+                    <div class="more">+3 more features</div>
+                </div>
+            </div>
+
+            <div id="selectionDisplay" style="margin-top:16px; color:#cbd5e1;">
+                Selected: <strong id="selName">Pro</strong> — <span id="selPrice">$19.99</span>/month
+            </div>
+
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <!-- Tab Header -->
+        <div data-aos="fade-down" class="tabs-list">
+            <div class="tab-trigger active" data-tab="features">Features</div>
+            <div class="tab-trigger" data-tab="specifications">Specifications</div>
+            <div class="tab-trigger" data-tab="reviews">Reviews</div>
+        </div>
+
+        <!-- Tab Content -->
+        <div data-aos="fade-up" id="features" class="feature-tab tab-content active">
+            <h3>Complete Feature List</h3>
+            <p class="desc">Comprehensive protection features included in Pro plan</p>
+            <div class="feature-layout">
+                <div class="feature-item">
+                    <i class="bx bx-check-circle"></i>
+                    <div>
+                        <p>Everything in Basic</p>
+                        <p>Advanced protection feature with real-time monitoring capabilities.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="bx bx-check-circle"></i>
+                    <div>
+                        <p>Everything in Basic</p>
+                        <p>Advanced protection feature with real-time monitoring capabilities.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="bx bx-check-circle"></i>
+                    <div>
+                        <p>Everything in Basic</p>
+                        <p>Advanced protection feature with real-time monitoring capabilities.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="bx bx-check-circle"></i>
+                    <div>
+                        <p>Everything in Basic</p>
+                        <p>Advanced protection feature with real-time monitoring capabilities.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="bx bx-check-circle"></i>
+                    <div>
+                        <p>Everything in Basic</p>
+                        <p>Advanced protection feature with real-time monitoring capabilities.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="bx bx-check-circle"></i>
+                    <div>
+                        <p>Everything in Basic</p>
+                        <p>Advanced protection feature with real-time monitoring capabilities.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="bx bx-check-circle"></i>
+                    <div>
+                        <p>Everything in Basic</p>
+                        <p>Advanced protection feature with real-time monitoring capabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="specifications" class="spec-tab tab-content">
+            <h3>Technical Specifications</h3>
+            <p class="desc">System requirements and technical details</p>
+            <div class="content">
+                <p>System Requirements</p>
+                <p><i class="bx bx-check-circle"></i> Windows 10/11, macOS 10.15+, Linux Ubuntu 18.04+</p>
+                <p><i class="bx bx-check-circle"></i> Minimum 2GB RAM</p>
+                <p><i class="bx bx-check-circle"></i> 500MB disk space</p>
+            </div>
+            <div class="content">
+                <p>Protection Features</p>
+                <p><i class="bx bx-check-circle"></i> Windows 10/11, macOS 10.15+, Linux Ubuntu 18.04+</p>
+                <p><i class="bx bx-check-circle"></i> Minimum 2GB RAM</p>
+                <p><i class="bx bx-check-circle"></i> 500MB disk space</p>
+            </div>
+            <div class="content">
+                <p>Performance</p>
+                <p><i class="bx bx-check-circle"></i> Windows 10/11, macOS 10.15+, Linux Ubuntu 18.04+</p>
+                <p><i class="bx bx-check-circle"></i> Minimum 2GB RAM</p>
+                <p><i class="bx bx-check-circle"></i> 500MB disk space</p>
+            </div>
+        </div>
+
+        <div id="reviews" class="review-tab tab-content">
+            <h3>Customer Reviews</h3>
+            <p class="desc">What our customers are saying about Antivirus Safezone</p>
+            <div class="review-product">
+                <div>
+                    <strong>John Doe</strong>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
+                            class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                    </div>
+                    <p>Excellent protection! Caught several threats that other antivirus missed.</p>
+                </div>
+                <p class="time">2 days ago</p>
+            </div>
+            <div class="review-product">
+                <div>
+                    <strong>John Doe</strong>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
+                            class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                    </div>
+                    <p>Excellent protection! Caught several threats that other antivirus missed.</p>
+                </div>
+                <p class="time">2 days ago</p>
+            </div>
+            <div class="review-product">
+                <div>
+                    <strong>John Doe</strong>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
+                            class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                    </div>
+                    <p>Excellent protection! Caught several threats that other antivirus missed.</p>
+                </div>
+                <p class="time">2 days ago</p>
+            </div>
+            <div class="review-product">
+                <div>
+                    <strong>John Doe</strong>
+                    <div class="stars">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
+                            class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                    </div>
+                    <p>Excellent protection! Caught several threats that other antivirus missed.</p>
+                </div>
+                <p class="time">2 days ago</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-container">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question">
+                What is Antivirus?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Antivirus software is a type of program designed to protect computers and other devices from
+                    malicious software (malware), including viruses, worms, Trojans, and other threats. It works
+                    by scanning files and programs for known malware signatures, analyzing behavior patterns,
+                    and potentially blocking or removing infected files. Antivirus software often runs in the
+                    background to provide real-time protection and is an essential part of a comprehensive
+                    cybersecurity strategy.
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                What is the difference between malware and a virus?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Malware is a term for any type of malicious software, regardless of how it works, its intent
+                    or how
+                    it’s distributed. A virus is a specific type of malware that self-replicates by inserting
+                    its code
+                    into other programs. There are many ways cybercriminals distribute malware and viruses, but
+                    the most
+                    common are malicious emails and websites
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                How do I use Antivirus Safezone?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Malware is a term for any type of malicious software, regardless of how it works, its intent
+                    or how
+                    it’s distributed. A virus is a specific type of malware that self-replicates by inserting
+                    its code
+                    into other programs. There are many ways cybercriminals distribute malware and viruses, but
+                    the most
+                    common are malicious emails and websites
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo">
+            <img src="assets/logo.png" alt="logo" width="32px" height="32px">
+            <h2>SAFEZONE</h2>
+        </div>
+        <div class="line"></div>
+        <div class="quick-link">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="about-us.html">About Us</a>
+        </div>
+        <div class="contact-app">
+            <a href=""><i class="bx bxl-instagram"></i></a>
+            <a href=""><i class="bx bxl-facebook"></i></a>
+            <a href=""><i class="bx bxl-discord"></i></a>
+            <a href=""><i class="bx bxl-whatsapp"></i></a>
+        </div>
+        <div class="policy">
+            <a href="">Terms & Conditions</a>
+            <div class="horizontal-line"></div>
+            <a href="">Privacy Policy</a>
+            <div class="horizontal-line"></div>
+            <a href="">Disclosures</a>
+        </div>
+        <p>&copy; 2025 Safezone. All rights reserved.</p>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="lib/swiperjs v11.1.5//swiper-bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="lib/Animate On Scroll v2.3.2/dist/aos.js"></script>
+
+    <!-- FancyBox JS -->
+    <script src="lib/Fancybox v5.0.36/dist/fancybox/fancybox.umd.js"></script>
+
+    <!-- GSAP -->
+    <script src="lib/gsap/minified/gsap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

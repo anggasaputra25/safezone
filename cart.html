@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <!-- Box Icons -->
+    <link href='lib/boxicons v2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Swiper -->
+    <link rel="stylesheet" href="lib/swiperjs v11.1.5/swiper-bundle.min.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="lib/Animate On Scroll v2.3.2/dist/aos.css">
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="lib/Fancybox v5.0.36/dist/fancybox/fancybox.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Alert Overlay -->
+    <div class="alert-overlay-products" id="alertOverlay">
+        <div class="alert-container" id="alertContainer">
+            <div class="alert-icon checkmark" id="alertIcon">
+                <i class='bx bx-check'></i>
+            </div>
+            <h3 class="alert-title"></h3>
+            <p class="alert-message"></p>
+            <div class="alert-actions">
+                <button class="alert-btn btn-secondary" onclick="closeAlert()">
+                    Keep Shopping
+                </button>
+                <button class="alert-btn btn-primary" onclick="goToDashboard()">
+                    <i class='bx bx-receipt'></i>
+                    Go to Dashboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button class="to-top"><i class="bx bx-up-arrow-alt"></i></button>
+
+    <nav data-aos="fade-down">
+        <a class="nav-logo" href="index.html"><img src="assets/logo.png" alt="Logo" width="30px"></a>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
+
+        <ol class="glassmorphism" id="nav-links">
+            <li><a href="products.html">Products</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about-us.html">About us</a></li>
+            <li class="nav-item-mobile"><a href="">Profile</a></li>
+            <li class="nav-item-mobile"><a href="dashboard.html">Dashboard</a></li>
+            <li class="nav-item-mobile"><a href="cart.html">Cart</a></li>
+            <li class="nav-item-mobile"><a href="before.html">Sign Out</a></li>
+        </ol>
+
+        <div class="auth-container">
+            <div class="auth" id="auth-toggle">
+                <img src="assets/clients/client2.jpg" alt="profile" width="30px" height="30px"></img>
+                <p>Angga</p>
+            </div>
+
+            <div class="dropdown-menu" id="dropdown-menu">
+                <a href="" class="dropdown-item">
+                    <i class='bx bx-user'></i>
+                    <span>Profile</span>
+                </a>
+                <a href="dashboard.html" class="dropdown-item">
+                    <i class='bx bx-receipt'></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="cart.html" class="dropdown-item">
+                    <i class='bx bx-cart-alt'></i>
+                    <span>Cart</span>
+                </a>
+                <a href="before.html" class="dropdown-item">
+                    <i class='bx bx-log-out'></i>
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cart-page">
+        <div class="left" id="cart-items-container">
+            <h1>Shopping Cart</h1>
+            <div id="cart-items-list">
+                <!-- Cart items will be dynamically loaded here -->
+            </div>
+            <div id="empty-cart" class="empty-cart" style="display: none;">
+                <i class="bx bx-cart-alt"></i>
+                <h2>Your cart is empty</h2>
+                <p>Add some products to get started</p>
+            </div>
+        </div>
+        <div class="right" id="cart-summary">
+            <p>Do You Have a Promo Code?</p>
+            <div class="promo">
+                <input type="text" placeholder="Promo Code" id="promo-code">
+                <button id="apply-promo">Apply</button>
+            </div>
+            <h2>Cart Totals</h2>
+            <div class="payment">
+                <select name="payment-method" id="payment-method">
+                    <option value="BRI">BRI</option>
+                    <option value="BCA">BCA</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="MasterCard">MasterCard</option>
+                </select>
+                <i class="bx bxs-chevron-down"></i>
+            </div>
+            <div class="totals">
+                <div class="total-text">
+                    <p>Subtotal</p>
+                    <p id="subtotal">$0</p>
+                </div>
+                <div class="total-text">
+                    <p>Discount</p>
+                    <p id="discount">$0</p>
+                </div>
+                <div class="total-text">
+                    <p>Tax (11%)</p>
+                    <p id="tax">$0</p>
+                </div>
+            </div>
+            <div class="total-text paragraf">
+                <p>Total</p>
+                <p id="total">$0</p>
+            </div>
+            <p>Need Help? Call us at <a href="">+123-456-789</a></p>
+            <button class="btn-checkout" id="checkout-btn"><i class="bx bx-lock-alt"></i> Secure Checkout</button>
+            <a href="products.html" class="btn-continue">Continue Shopping</a>
+            <p><i class="bx bx-shield"></i> 256-bit SSL encryption</p>
+            <p><i class="bx bx-lock-alt"></i> Secure payment processing</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo">
+            <img src="assets/logo.png" alt="logo" width="32px" height="32px">
+            <h2>SAFEZONE</h2>
+        </div>
+        <div class="line"></div>
+        <div class="quick-link">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="about-us.html">About Us</a>
+        </div>
+        <div class="contact-app">
+            <a href=""><i class="bx bxl-instagram"></i></a>
+            <a href=""><i class="bx bxl-facebook"></i></a>
+            <a href=""><i class="bx bxl-discord"></i></a>
+            <a href=""><i class="bx bxl-whatsapp"></i></a>
+        </div>
+        <div class="policy">
+            <a href="">Terms & Conditions</a>
+            <div class="horizontal-line"></div>
+            <a href="">Privacy Policy</a>
+            <div class="horizontal-line"></div>
+            <a href="">Disclosures</a>
+        </div>
+        <p>&copy; 2025 Safezone. All rights reserved.</p>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="lib/swiperjs v11.1.5//swiper-bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="lib/Animate On Scroll v2.3.2/dist/aos.js"></script>
+
+    <!-- FancyBox JS -->
+    <script src="lib/Fancybox v5.0.36/dist/fancybox/fancybox.umd.js"></script>
+
+    <!-- GSAP -->
+    <script src="lib/gsap/minified/gsap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

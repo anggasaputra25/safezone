@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <!-- Box Icons -->
+    <link href='lib/boxicons v2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Swiper -->
+    <link rel="stylesheet" href="lib/swiperjs v11.1.5/swiper-bundle.min.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="lib/Animate On Scroll v2.3.2/dist/aos.css">
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="lib/Fancybox v5.0.36/dist/fancybox/fancybox.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="history-page">
+
+    <button class="to-top"><i class="bx bx-up-arrow-alt"></i></button>
+
+    <nav data-aos="fade-down">
+        <a class="nav-logo" href="index.html"><img src="assets/logo.png" alt="Logo" width="30px"></a>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
+
+        <ol class="glassmorphism" id="nav-links">
+            <li><a href="products.html">Products</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about-us.html">About us</a></li>
+            <li class="nav-item-mobile"><a href="">Profile</a></li>
+            <li class="nav-item-mobile"><a href="dashboard.html">Dashboard</a></li>
+            <li class="nav-item-mobile"><a href="cart.html">Cart</a></li>
+            <li class="nav-item-mobile"><a href="before.html">Sign Out</a></li>
+        </ol>
+
+        <div class="auth-container">
+            <div class="auth" id="auth-toggle">
+                <img src="assets/clients/client2.jpg" alt="profile" width="30px" height="30px"></img>
+                <p>Angga</p>
+            </div>
+
+            <div class="dropdown-menu" id="dropdown-menu">
+                <a href="" class="dropdown-item">
+                    <i class='bx bx-user'></i>
+                    <span>Profile</span>
+                </a>
+                <a href="dashboard.html" class="dropdown-item">
+                    <i class='bx bx-receipt'></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="cart.html" class="dropdown-item">
+                    <i class='bx bx-cart-alt'></i>
+                    <span>Cart</span>
+                </a>
+                <a href="before.html" class="dropdown-item">
+                    <i class='bx bx-log-out'></i>
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <!-- Filter Tabs -->
+        <div data-aos="fade-down" class="filter-tabs">
+            <button class="tab-button active" data-tab="all">All Orders</button>
+            <button class="tab-button" data-tab="active">Active</button>
+            <button class="tab-button" data-tab="expired">Expired</button>
+        </div>
+
+        <!-- Purchase List -->
+        <div id="purchaseList" class="purchase-list">
+            <!-- Purchase cards will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <i data-lucide="package" class="icon-large"></i>
+            <h3>No purchases found</h3>
+            <p id="emptyStateMessage">You haven't made any purchases yet.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo">
+            <img src="assets/logo.png" alt="logo" width="32px" height="32px">
+            <h2>SAFEZONE</h2>
+        </div>
+        <div class="line"></div>
+        <div class="quick-link">
+            <a href="">Home</a>
+            <a href="products.html">Products</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="about-us.html">About Us</a>
+        </div>
+        <div class="contact-app">
+            <a href=""><i class="bx bxl-instagram"></i></a>
+            <a href=""><i class="bx bxl-facebook"></i></a>
+            <a href=""><i class="bx bxl-discord"></i></a>
+            <a href=""><i class="bx bxl-whatsapp"></i></a>
+        </div>
+        <div class="policy">
+            <a href="">Terms & Conditions</a>
+            <div class="horizontal-line"></div>
+            <a href="">Privacy Policy</a>
+            <div class="horizontal-line"></div>
+            <a href="">Disclosures</a>
+        </div>
+        <p>&copy; 2025 Safezone. All rights reserved.</p>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="lib/swiperjs v11.1.5//swiper-bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="lib/Animate On Scroll v2.3.2/dist/aos.js"></script>
+
+    <!-- FancyBox JS -->
+    <script src="lib/Fancybox v5.0.36/dist/fancybox/fancybox.umd.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
